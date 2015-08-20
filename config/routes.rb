@@ -17,8 +17,9 @@ Rails.application.routes.draw do
     resources :projects, only: [:index]
   end
   get '/npoform', to: 'npos#new'
+  get '/npoindex', to: 'npos#index'
 
-  # resources :tasks use this later for task functionality
+  resources :tasks, only: [:index]
 
   resources :projects, only: [:create, :show, :edit, :update]
 end
@@ -26,10 +27,12 @@ end
 
 #        Prefix Verb   URI Pattern                            Controller#Action
 #          root GET    /                                      welcome#index
+#         about GET    /about(.:format)                       welcome#show
 #         users POST   /users(.:format)                       users#create
 #     edit_user GET    /users/:id/edit(.:format)              users#edit
 #          user PATCH  /users/:id(.:format)                   users#update
 #               PUT    /users/:id(.:format)                   users#update
+#               DELETE /users/:id(.:format)                   users#destroy
 #        signup GET    /signup(.:format)                      users#new
 #       profile GET    /users/:id(.:format)                   users#show
 #      sessions POST   /sessions(.:format)                    sessions#create
@@ -53,10 +56,10 @@ end
 #               PUT    /npos/:id(.:format)                    npos#update
 #               DELETE /npos/:id(.:format)                    npos#destroy
 #       npoform GET    /npoform(.:format)                     npos#new
+#      npoindex GET    /npoindex(.:format)                    npos#index
+#         tasks GET    /tasks(.:format)                       tasks#index
 #      projects POST   /projects(.:format)                    projects#create
 #  edit_project GET    /projects/:id/edit(.:format)           projects#edit
 #       project GET    /projects/:id(.:format)                projects#show
 #               PATCH  /projects/:id(.:format)                projects#update
 #               PUT    /projects/:id(.:format)                projects#update
-
-              

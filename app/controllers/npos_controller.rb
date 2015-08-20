@@ -1,7 +1,7 @@
 class NposController < ApplicationController
 	def index 
 		@npos = Npo.all
-		render :show
+		render :index
 	end
 
 	def new

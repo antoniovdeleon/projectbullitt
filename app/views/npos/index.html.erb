@@ -1,1 +1,21 @@
-this is my index
+
+<div class="container">
+  <br>
+  <center>
+    
+      <div class="row">
+        
+        <div class="col-md-6">
+        <div class="thumbnail">
+          <h3> Latest NPO:</h3>
+          <% @npos.each do |npos| %> 
+          <hr>
+          <p><%= link_to npos.name, npo_path(npos) %></p>
+          <% end  %> 
+          </div>
+        </div>
+      
+      
+    </div>
+  </center>
+</div>
