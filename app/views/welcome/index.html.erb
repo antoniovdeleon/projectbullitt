@@ -14,9 +14,9 @@
 		
 			<div class="row">
 				
-				<div class="col-md-4">
+				<div class="col-md-12">
 				<div class="thumbnail">
-					<h3> Latest NPO:</h3>
+					<h3> Featured Organizations:</h3>
 					<% @npo.each do |npo| %> 
 					<hr>
 		  		<p><%= link_to npo.name, npo_path(npo) %></p>
@@ -25,9 +25,9 @@
 				</div>
 				
 	
-				<div class="col-md-8">
+				<div class="col-md-12">
 				<div class="thumbnail">
-				<h3>Latest Issues:</h3>
+				<h3>Featured Projects:</h3>
 					<% @task.each do |task| %> 
 					<hr>
 			  	<p>Issue:  <%= link_to task.issue, npo_task_path(task.npo, task)  %></p>

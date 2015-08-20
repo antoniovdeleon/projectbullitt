@@ -7,7 +7,7 @@
         
         <div class="col-md-6">
         <div class="thumbnail">
-          <h3> Latest NPO:</h3>
+          <h3> Browse Latest Organizations:</h3>
           <% @npos.each do |npos| %> 
           <hr>
           <p><%= link_to npos.name, npo_path(npos) %></p>
