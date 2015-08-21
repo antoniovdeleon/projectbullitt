@@ -12,47 +12,73 @@
 <div class="container">
 	<br>
 	<center>
-		
-			<div class="row">
-	
-				<div class="col-md-12">
+	<div class="row">
+
+			<div class="col-md-6">
 				<div class="thumbnail">
-				<h3>Featured Projects:</h3>
-					<% @task.each do |task| %> 
-					<hr>
-			  	<p>Issue:  <%= link_to task.issue, npo_task_path(task.npo, task)  %></p>
-			  	<p>Description: <%= task.description %></p>
-			  	<% end  %> 
+					<h3>Featured Projects:</h3>
+						<% @task.each do |task| %> 
+						<hr>
+					  	<p>Issue:  <%= link_to task.issue, npo_task_path(task.npo, task)  %></p>
+					  	<p>Description: <%= task.description %></p>
+					  	<% end  %> 
 			  	</div>
+	  		</div>
+
+  			<div class="col-md-6">
+  				<div class="thumbnail">
+  					<a href="/about"><h3>About</h3></a>				
+  		  		</div>
+  			</div>
+	</div>	
+	
+	<div class="row">
+		<div class="col-md-6">
+			<div class="thumbnail">
+				<h3> Featured Organizations:</h3>
+				<% @npo.each do |npo| %> 
+				<hr>
+	  			<p><%= link_to npo.name, npo_path(npo) %></p>
+	  			<% end  %> 
 		  	</div>
-
-		  	<div class="col-md-12">
-				<div class="thumbnail">
-					<h3> Featured Developers:</h3>
-
-					<% @user.each do |user| %> 
-						<% if user.is_npo == false %>
-							<hr>
-		 					 <%= image_tag user.avatar.url(:thumb) %>
-				  		<p><%= user.username %></p>
-
-				  	<% end %> 
-				  <% end %> 
-					
-		  		</div>
-				</div>
-
-				<div class="col-md-12">
-				<div class="thumbnail">
-					<h3> Featured Organizations:</h3>
-					<% @npo.each do |npo| %> 
-					<hr>
-		  		<p><%= link_to npo.name, npo_path(npo) %></p>
-		  		<% end  %> 
-		  		</div>
-				</div>
-			
 		</div>
+
+		<div class="col-md-6">
+			<div class="thumbnail">
+				<a href="/tasks"><h3>Projects</h3></a>				
+		  	</div>
+		</div>
+
+	</div>	
+
+	<div class="row">
+	 	<div class="col-md-6">
+		<div class="thumbnail">
+			<h3> Featured Developers:</h3>
+			<% @user.each do |user| %> 
+				<% if user.is_npo == false %>
+					<hr>
+ 					<%= image_tag user.avatar.url(:thumb) %>
+		  			<p><%= user.username %></p>
+			  	<% end %> 
+			  <% end %> 
+	  		</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="thumbnail">
+				<a href="/npos"><h3>Organization</h3></a>				
+	  		</div>
+		</div>
+	</div>	
+
+
+		
+
+	 	
+
+	
+	
 	</center>
 </div>
 		
