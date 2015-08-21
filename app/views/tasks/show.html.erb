@@ -1,17 +1,20 @@
 <div class="container">
   <div class="row">
+    <center>
+      <h3>Project</h3>
+      <hr>
+      <%= image_tag @npo.avatar.url(:medium) %>
+      <br>
+      <%= @npo.name %>
+      <br>
+      Issue: <%= @task.issue %> <br> <br>
+      Description: <%= @task.description %> <br> <br>
 
-
-  <center>
-  <h3> Description of Task: </h3>
-    <hr>
-    Issue: <%= @task.issue %> <br> <br>
-  
-    Description: <%= @task.description %> <br> <br>
-
+        <%= link_to "Edit Issue", npo_task_path%>
     </center>
-
-
   </div>
 </div>
-
+      <% if false %> 
+      <% if @npo.user.id == session[:user_id] %>
+      <% end %>
+      <% end %>
