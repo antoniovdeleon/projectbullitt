@@ -1,7 +1,9 @@
 class WelcomeController < ApplicationController
   def index
     @npo = Npo.all
-    @task = Task.all   
+    @task = Task.all 
+    @user = User.all
+    
     render :index
   end
   
