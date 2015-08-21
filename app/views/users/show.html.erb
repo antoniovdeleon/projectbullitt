@@ -9,7 +9,7 @@
       <%= image_tag @user.avatar.url(:medium) %>
 	    <h3>Username: <%= @user.username %> </h3>
 	    <p>Email: <%= @user.email %> </p>
-	    <p>Date Joined: <%= @user.created_at %> </p>
+      <p>Date Joined: <%= Time.now.strftime("%m-%d-%Y") %> </p>
       <% if @user.id == session[:user_id] %>
         <%= link_to "Edit Your Account", edit_user_path, class: "btn btn-primary" %>
       <% end %>

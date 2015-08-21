@@ -6,7 +6,7 @@
 				<%= image_tag @npo.avatar.url(:medium) %>
 		    <h4><%= @npo.name %> </h4>
 		    <p>Mission: <%= @npo.about %> </p>
-		    <p>Date Joined: <%= @npo.created_at %> </p>
+		    <p>Date Joined: <%= Time.now.strftime("%m-%d-%Y") %> </p>
 	      <% if @npo.user.id == session[:user_id] %>
 	 				<%= link_to "Edit Your NPO Organization", edit_npo_path, class: "btn btn-primary" %>
 	      <% end %>
