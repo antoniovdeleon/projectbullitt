@@ -19,27 +19,26 @@ class TasksController < ApplicationController
 	end
 
 	def show 
+		@npo = Npo.find(params[:id])
 		@task = Task.find(params[:id])
 		render :show
 	end
 
 	def edit
+		@npo = Npo.find(params[:id])
 		@task = Task.find(params[:id])
-		if current_user.npos.tasks.include? @task
-			render :edit
-		else
-			redirect_to login_path
-		end
+		render :edit
 	end
 
 	def update
-	  task = Task.find(params[:id])
-	  if user.is_npo.tasks.include? task
-	    task.update_attributes(task_params)
-	    redirect_to task_path(task)
-	  else
-	    redirect_to task_path
-	  end
+	  @task = Task.find(params[:id])
+	  @npo = @task.npo_id 
+	  # if current_user.@npos.include? @npo
+	  	@task.update_attributes(task_params)
+	  	redirect_to npo_path(@npo)
+	  # else 
+	  # 	redirect_to root_path
+	  # end
 	end
 
 	def destroy
@@ -48,7 +47,7 @@ class TasksController < ApplicationController
 	private
 	
 	def task_params
-		params.require(:task).permit(:issue, :description, :language, :framework)
+		params.require(:task).permit(:issue, :description)
 	end
 
 end

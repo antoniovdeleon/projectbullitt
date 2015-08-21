@@ -11,17 +11,6 @@
 	<center>
 		
 			<div class="row">
-				
-				<div class="col-md-12">
-				<div class="thumbnail">
-					<h3> Featured Organizations:</h3>
-					<% @npo.each do |npo| %> 
-					<hr>
-		  		<p><%= link_to npo.name, npo_path(npo) %></p>
-		  		<% end  %> 
-		  		</div>
-				</div>
-				
 	
 				<div class="col-md-12">
 				<div class="thumbnail">
@@ -33,6 +22,32 @@
 			  	<% end  %> 
 			  	</div>
 		  	</div>
+
+		  	<div class="col-md-12">
+				<div class="thumbnail">
+					<h3> Featured Developers:</h3>
+
+					<% @user.each do |user| %> 
+						<% if user.is_npo == false %>
+							<hr>
+		 					 <%= image_tag user.avatar.url(:thumb) %>
+				  		<p><%= user.username %></p>
+
+				  	<% end %> 
+				  <% end %> 
+					
+		  		</div>
+				</div>
+
+				<div class="col-md-12">
+				<div class="thumbnail">
+					<h3> Featured Organizations:</h3>
+					<% @npo.each do |npo| %> 
+					<hr>
+		  		<p><%= link_to npo.name, npo_path(npo) %></p>
+		  		<% end  %> 
+		  		</div>
+				</div>
 			
 		</div>
 	</center>

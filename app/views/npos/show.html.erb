@@ -1,15 +1,17 @@
 <div class="container">
   <div class="row">
    <div class="col-md-5">
-		<div class="thumbnail"> <center>
-	    <h3><%= @npo.name %> </h3>
-	    <h4>Our Mission: <%= @npo.about %> </h4>
-	    <p>Date Joined: <%= @npo.created_at %> </p>
-      <% if @npo.user.id == session[:user_id] %>
- 			<%= link_to "Edit Your NPO Organization", edit_npo_path, class: "btn btn-primary" %>
-      <% end %>
-        <hr>
-      <p>  <%= link_to @npo.projects.where(status: "Pending").count, npo_projects_path(@npo) %> Pending Requests </p> 
+		<div class="thumbnail"> 
+			<center>
+				<%= image_tag @npo.avatar.url(:medium) %>
+		    <h4><%= @npo.name %> </h4>
+		    <p>Mission: <%= @npo.about %> </p>
+		    <p>Date Joined: <%= Time.now.strftime("%m-%d-%Y") %> </p>
+	      <% if @npo.user.id == session[:user_id] %>
+	 				<%= link_to "Edit Your NPO Organization", edit_npo_path, class: "btn btn-primary" %>
+	      <% end %>
+	      <hr>
+	      <p><%= link_to @npo.projects.where(status: "Pending").count, npo_projects_path(@npo) %> Pending Requests </p> 
       </center>
 		</div>
   </div>
@@ -20,8 +22,11 @@
 				<h3>Looking For Developer Help:</h3> <br>
 	    	<% @npo.tasks.each do |task| %>
 	    	<div class="well">
-	  			<p>Issue:  <%= link_to task.issue, npo_task_path(@npo, task) %></p>
+	  			<p>Project:  <%= link_to task.issue, npo_task_path(@npo, task) %></p>
 	  			<p>Description: <%= task.description %></p>
+  				<% if @npo.user.id == session[:user_id] %>
+  					<%= link_to "Edit Issue", edit_npo_task_path(@npo, task) %>
+  				<% end %>
   				<% if logged_in? %>
   					<% if current_user.is_npo == false %>
   			 			<%= form_for :project, url: projects_path do |f| %>

@@ -17,19 +17,10 @@ nav {
 	padding-right:10px;
 }
 
-.dropdown-toggle {
-	padding-bottom:10px;
-	text-shadow:2px 2px 4px #000000;
 
-}
-body > nav > div > div.collapse.navbar-collapse > ul > div > ul > li:nth-child(2) > a {
-	color:white;
-	background-color:#dd4814;
-}
-body > nav > div > div.collapse.navbar-collapse > ul > div > ul > li:nth-child(1) > a {
-	color:white;
-	background-color:#dd4814;
-}
+
+
+
 
 .navbar {
 	padding-bottom:10px;

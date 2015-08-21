@@ -1,28 +1,18 @@
-== README
+developers without borders is a platform for developers and non profit organizations to connect & work together on issues. this gives a chance for developers to work with a non profit organization which they may be passionate about as well as projects to post onto their portfolios and resumes. this is great for people who are learning to code because it gives them the opportunity to do real work & gain experience. this platform also gives non profit organizations a chance to get help on their websites. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+technologies used | 
+-postgresql
+-ruby
+-rails
+-paperclip
+-bootstrap
 
-Things you may want to cover:
+link to the live project: https://projectbullitt.herokuapp.com/
+link to the github: https://github.com/esbenbsmith/projectbullitt
 
-* Ruby version
+contributors | 
+antonio de leon
+tim festa
+esben smith
+taranamol kaur
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
