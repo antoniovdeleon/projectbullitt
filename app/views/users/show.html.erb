@@ -20,7 +20,8 @@
     <% if logged_in? %>
       <% if current_user.is_npo == true %>
         <% if current_user.npos.any? %>
-          <h3> Your NPO Organizations: </h3>
+        <%= image_tag "http://i51.photobucket.com/albums/f364/esbenbsmith/globelogo_zpsmsaxpu2q.png", :class => "handshake"%>
+          <h3> Your Organizations: </h3>
           <% @user.npos.each do |npo| %>
             <div class="well">
               <%= image_tag npo.avatar.url(:medium) %>
@@ -31,6 +32,7 @@
           <%= link_to "Add A Nonprofit Organization", new_npo_path, class: "btn btn-primary" %>
         <% end %>
       <% else %>
+        <%= image_tag "http://i51.photobucket.com/albums/f364/esbenbsmith/projectlogo_zpsvhrxx5m8.png", :class => "handshake"%> 
 			 <h3> Projects Applied To: </h3>
         <hr>
         <% if current_user.projects  %>

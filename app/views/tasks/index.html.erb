@@ -5,13 +5,14 @@
     
       <div class="row">
         
-        <div class="col-md-8">
+        <div class="col-md-offset-3 col-md-6">
         <div class="thumbnail">
-        <h3>Browse Latest Projects Submitted:</h3>
+          <%= image_tag "http://i51.photobucket.com/albums/f364/esbenbsmith/projectlogo_zpsvhrxx5m8.png", :class => "handshake"%>
+        <h3>Browse Latest Projects Submitted</h3>
           <% @task.each do |task| %> 
           <hr>
-          <p>Issue:  <%= link_to task.issue, npo_task_path(task.npo, task)  %></p>
-          <p>Description: <%= task.description %></p>
+          <p><%= link_to task.issue, npo_task_path(task.npo, task)  %></p>
+          <p><%= task.description %></p>
           <% end  %> 
           </div>
         </div>
