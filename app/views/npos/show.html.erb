@@ -9,9 +9,9 @@
 		    <p>Date Joined: <%= Time.now.strftime("%m-%d-%Y") %> </p>
 	      <% if @npo.user.id == session[:user_id] %>
 	 				<%= link_to "Edit Your NPO Organization", edit_npo_path, class: "btn btn-primary" %>
-	      <% end %>
 	      <hr>
 	      <p><%= link_to @npo.projects.where(status: "Pending").count, npo_projects_path(@npo) %> Pending Requests </p> 
+	      <% end %>
       </center>
 		</div>
   </div>
