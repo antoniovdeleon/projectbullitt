@@ -10,7 +10,7 @@
       Issue: <%= @task.issue %> <br> <br>
       Description: <%= @task.description %> <br> <br>
 
-        <%= link_to "Edit Issue", npo_task_path%>
+        <%= link_to "Edit Issue", npo_task_path(npo, @task) %>
 
     </center>
   </div>
