@@ -20,29 +20,28 @@
     <% if logged_in? %>
       <% if current_user.is_npo == true %>
         <% if current_user.npos.any? %>
-        <h3> Your NPO Organizations: </h3>
+          <h3> Your NPO Organizations: </h3>
           <% @user.npos.each do |npo| %>
             <div class="well">
               <%= image_tag npo.avatar.url(:medium) %>
               <p><%= link_to npo.name, npo_path(npo) %></p>
             </div>    
-          
+          <% end %>
+        <% else %>
+          <%= link_to "Add A Nonprofit Organization", new_npo_path, class: "btn btn-primary" %>
         <% end %>
-        <%= link_to "Add A Nonprofit Organization", new_npo_path, class: "btn btn-primary" %>
-      <% end %>
-    <% elsif current_user.is_npo ==false %>
-     
-			<h3> Projects Applied To: </h3>
-      <hr>
-      <% current_user.projects.each do |project| %> 
-      <p>
-      <%= link_to project.task.issue, npo_task_path(project.task.npo, project.task) %>  -
-      <%= project.task.description %> </p>
-       
-        <% end %> 
+      <% else %>
+			 <h3> Projects Applied To: </h3>
+        <hr>
+        <% if current_user.projects  %>
+          <% current_user.projects.each do |project| %> 
+            <p><%= link_to project.task.issue, npo_task_path(project.task.npo, project.task) %>  -
+            <%= project.task.description %> </p>
+          <% end %> 
+        <% end %>    
       <% end %> 
-      <% end %>
-      <center>
+    <% end %>
+    <center>
   </div>
 </div>
 
