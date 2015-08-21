@@ -7,25 +7,34 @@
 </div>
 
 <div class="container">
-	<br>
 	<center>
-		
-			<div class="row">
-	
-				<div class="col-md-12">
-				<div class="thumbnail">
-				<h3>Featured Projects:</h3>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="thumbnail">
+				<%= image_tag "http://i51.photobucket.com/albums/f364/esbenbsmith/projectlogo_zpsvhrxx5m8.png", :class => "handshake"%>				
+					<h3>Featured Projects</h3>
 					<% @task.each do |task| %> 
 					<hr>
-			  	<p>Issue:  <%= link_to task.issue, npo_task_path(task.npo, task)  %></p>
-			  	<p>Description: <%= task.description %></p>
+			  	<p><%= link_to task.issue, npo_task_path(task.npo, task)  %></p>
+			  	<p><%= task.description %></p>
 			  	<% end  %> 
-			  	</div>
-		  	</div>
+			 </div>
+		</div>
+		<div class="col-md-6">
+			<div class="thumbnail">						
+				<%= image_tag "http://i51.photobucket.com/albums/f364/esbenbsmith/handshake_zpsj6wznowu.png", :class => "handshake"%>						
+				<h3>Our Mission</h3>
+				<p>To facilitate the interactions between non-profit organizations and volunteer developers, to allow good causes equal access to technology</p>			
+			 </div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="thumbnail">
+					
+					<%= image_tag "http://i51.photobucket.com/albums/f364/esbenbsmith/devlogo_zpssegarcuw.png", :class => "handshake"%>
 
-		  	<div class="col-md-12">
-				<div class="thumbnail">
-					<h3> Featured Developers:</h3>
+					<h3> Featured Developers</h3>
 
 					<% @user.each do |user| %> 
 						<% if user.is_npo == false %>
@@ -36,21 +45,46 @@
 				  	<% end %> 
 				  <% end %> 
 					
-		  		</div>
-				</div>
-
-				<div class="col-md-12">
-				<div class="thumbnail">
-					<h3> Featured Organizations:</h3>
+		  </div>
+		</div>
+		<div class="col-md-6">
+					<div class="thumbnail">
+					<%= image_tag "http://i51.photobucket.com/albums/f364/esbenbsmith/grouplogo_zpszz98otmn.png", :class => "handshake"%>
+					<h3>Who we are</h3>
+						<p>We are students of the web development immersive at General Assembly in San Francisco. We came upon this idea, because we think developers should be able to use their skills to do good. It is also a perfect opportunity for developers to add work to their portfolio. </p>	
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="thumbnail">
+					<%= image_tag "http://i51.photobucket.com/albums/f364/esbenbsmith/globelogo_zpsmsaxpu2q.png", :class => "handshake"%>				
+					<h3> Featured Organizations</h3>
 					<% @npo.each do |npo| %> 
 					<hr>
+					<%= image_tag npo.avatar.url(:medium) %>
 		  		<p><%= link_to npo.name, npo_path(npo) %></p>
 		  		<% end  %> 
-		  		</div>
-				</div>
-			
+		  </div>
 		</div>
-	</center>
+
+
+		<div class="col-md-6">
+			<div class="thumbnail">
+						<%= image_tag "http://i51.photobucket.com/albums/f364/esbenbsmith/contactlogo_zpsr3omh006.png", :class => "handshake"%>
+					<h3>Contact</h3>
+					<p>Tara Kaur<span class="email">  
+					tarskaur@gmail.com</span></p>
+					<p>Antonio De Leon<span class="email">   
+					tonichi@gmail.com</span></p>
+					<p>Tim Festa<span class="email">  
+					timothy.r.festa@gmail.com</span></p>
+					<p>Esben Smith<span class="email">  
+					esbenbsmith@gmail.com</span></p>
+			</div>
+		</div>
+	</div>
+</center>
 </div>
 		
 		
