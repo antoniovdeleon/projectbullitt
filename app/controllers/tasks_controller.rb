@@ -21,7 +21,6 @@ class TasksController < ApplicationController
 	def show 
 		@task = Task.find(params[:id])
 		@npo = Npo.find(params[:id])
-		npo = @task.npo_id
 		render :show
 	end
 
